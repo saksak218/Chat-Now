@@ -1,15 +1,10 @@
-export type AIModel = "gemini" | "deepseek" | "mistral";
+export type AIModel = "gemini" | "mistral";
 
 export const MODELS = {
   gemini: {
     name: "Google Gemini",
     model: "gemini-2.5-flash-lite",
     provider: "google",
-  },
-  deepseek: {
-    name: "DeepSeek",
-    model: "deepseek-chat",
-    provider: "deepseek",
   },
   mistral: {
     name: "Mistral AI",
@@ -21,7 +16,10 @@ export const MODELS = {
 export const getStoredModel = (): AIModel => {
   if (typeof window === "undefined") return "mistral";
   const stored = localStorage.getItem("ai-model");
-  return (stored as AIModel) || "mistral";
+  const validModels: AIModel[] = ["gemini", "mistral"];
+  // Handle legacy values by converting them to valid models
+  if (stored === "deepseek" || stored === "ollama") return "mistral";
+  return (stored && validModels.includes(stored as AIModel)) ? (stored as AIModel) : "mistral";
 };
 
 export const setStoredModel = (model: AIModel): void => {

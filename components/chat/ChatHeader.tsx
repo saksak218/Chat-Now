@@ -1,7 +1,8 @@
-import { Menu, Search, Bell, MoreVertical } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Chat } from "@/types";
 import { Id } from "@/convex/_generated/dataModel";
-import ModelSelector, { AIModel } from "./ModelSelector";
+import ModelSelector from "./ModelSelector";
+import { AIModel } from "@/lib/utils/model";
 
 interface ChatHeaderProps {
   activeChat: Chat | undefined;
@@ -24,24 +25,6 @@ export default function ChatHeader({ activeChat, onMenuClick, onModelChange }: C
       </div>
       <div className="flex items-center gap-3">
         <ModelSelector onModelChange={onModelChange} />
-        <button
-          className="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors"
-          aria-label="Search"
-        >
-          <Search size={18} />
-        </button>
-        <button
-          className="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors"
-          aria-label="Notifications"
-        >
-          <Bell size={18} />
-        </button>
-        <button
-          className="p-2 hover:bg-white/5 rounded-lg text-slate-400 hover:text-white transition-colors"
-          aria-label="More options"
-        >
-          <MoreVertical size={18} />
-        </button>
       </div>
     </header>
   );
