@@ -27,11 +27,15 @@ import { useForm } from "react-hook-form"
 import { loginSchema, type LoginFormData } from "@/constants/validation"
 import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
+  const router = useRouter()
+  
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -54,6 +58,7 @@ export function LoginForm({
       }
       console.log(data)
       toast.success("Logged in successfully")
+      router.push("/")
     } catch (error) {
       console.error(error)
       toast.error("Something went wrong")

@@ -27,8 +27,10 @@ import { useForm } from "react-hook-form"
 import { signupSchema, type SignupFormData } from "@/constants/validation"
 import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
+  const router = useRouter()
   const form = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
     defaultValues: {
@@ -52,6 +54,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
       }
       console.log(data)
       toast.success("User created successfully")
+      router.push("/")
     } catch (error) {
       console.error(error)
       toast.error("Something went wrong")
