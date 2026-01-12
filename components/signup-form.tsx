@@ -28,6 +28,7 @@ import { signupSchema, type SignupFormData } from "@/constants/validation"
 import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
   const router = useRouter()
@@ -142,7 +143,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                     Sign up with Google
                   </Button>
                   <FieldDescription className="px-6 text-center">
-                    Already have an account? <a href="#">Sign in</a>
+                    Already have an account? <Link href="/login">Sign in</Link>
                   </FieldDescription>
                 </Field>
               </FieldGroup>
