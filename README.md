@@ -2,7 +2,9 @@
 
 A modern, responsive AI chat application built with Next.js, featuring multiple AI models, file uploads, and real-time conversations.
 
-![Chat Now Preview](https://chat-now-tau.vercel.app/)
+## 🚀 Live Demo
+
+🌐 **[Chat Now Live Preview](https://chat-now-tau.vercel.app/)**
 
 ## 🌟 Features
 
@@ -47,10 +49,6 @@ A modern, responsive AI chat application built with Next.js, featuring multiple 
 - **UI Components:** Radix UI, Lucide Icons
 - **State Management:** React Hooks
 - **Deployment:** Vercel
-
-## 🚀 Live Demo
-
-🌐 **[Chat Now Live Preview](https://chat-now-tau.vercel.app/)**
 
 ## 📋 Prerequisites
 
