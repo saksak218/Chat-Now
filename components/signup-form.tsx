@@ -29,6 +29,7 @@ import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { ROUTES } from "@/constants"
 
 export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
   const router = useRouter()
@@ -55,7 +56,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
       }
       console.log(data)
       toast.success("User created successfully")
-      router.push("/")
+      router.push(ROUTES.HOME)
     } catch (error) {
       console.error(error)
       toast.error("Something went wrong")

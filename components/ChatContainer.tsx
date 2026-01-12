@@ -41,7 +41,7 @@ export default function ChatContainer() {
 
   const handleSignOut = async () => {
     await authClient.signOut();
-    router.push(ROUTES.SIGNUP);
+    router.push(ROUTES.LOGIN);
   };
 
   const activeChat = chats?.find((c) => c._id === activeChatId);
