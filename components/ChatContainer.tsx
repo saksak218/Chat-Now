@@ -48,7 +48,7 @@ export default function ChatContainer() {
 
   if (isSessionPending) return null;
   if (!session) {
-    router.push(ROUTES.SIGNUP);
+    router.push(ROUTES.LOGIN);
     return null;
   }
 

@@ -53,15 +53,16 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
       if (error) {
         console.error(error)
         toast.error(error?.message || "Something went wrong")
+        return
       }
       console.log(data)
       toast.success("User created successfully")
       router.push(ROUTES.HOME)
+      form.reset()
     } catch (error) {
       console.error(error)
       toast.error("Something went wrong")
     }
-    form.reset()
   }
   return (
     <Card {...props}>

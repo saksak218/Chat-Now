@@ -6,10 +6,10 @@ import { Bot, Sparkles, Paperclip, User as UserIcon } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface MessageListProps {
-  messages: Message[];
-  streamingContent: string;
-  isLoading: boolean;
-  user?: User | null;
+    messages: Message[];
+    streamingContent: string;
+    isLoading: boolean;
+    user?: User | null;
 }
 
 export default function MessageList({ messages, streamingContent, isLoading, user }: MessageListProps) {
@@ -34,7 +34,7 @@ export default function MessageList({ messages, streamingContent, isLoading, use
                         </div>
                         <h2 className="text-2xl font-bold mb-2 text-white">How can I help you today?</h2>
                         <p className="text-slate-400 max-w-md">
-                            Start a conversation or upload a file to analyze with AURA AI.
+                            Start a conversation or upload a file to analyze with CHAT NOW AI.
                         </p>
                     </div>
                 )}

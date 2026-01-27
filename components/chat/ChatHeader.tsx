@@ -21,7 +21,7 @@ export default function ChatHeader({ activeChat, onMenuClick, onModelChange }: C
         >
           <Menu size={20} />
         </button>
-        <h1>{activeChat?.title || "AURA AI Assistant"}</h1>
+        <h1>{activeChat?.title || "CHAT NOW AI Assistant"}</h1>
       </div>
       <div className="flex items-center gap-3">
         <ModelSelector onModelChange={onModelChange} />

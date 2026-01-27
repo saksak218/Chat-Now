@@ -29,6 +29,7 @@ import { authClient } from "@/lib/auth-client"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { ROUTES } from "@/constants"
 
 export function LoginForm({
   className,
@@ -36,7 +37,7 @@ export function LoginForm({
 }: React.ComponentProps<"div">) {
 
   const router = useRouter()
-  
+
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -56,15 +57,16 @@ export function LoginForm({
       if (error) {
         console.error(error)
         toast.error(error?.message || "Something went wrong")
+        return
       }
       console.log(data)
       toast.success("Logged in successfully")
-      router.push("/")
+      router.push(ROUTES.HOME)
+      form.reset()
     } catch (error) {
       console.error(error)
       toast.error("Something went wrong")
     }
-    form.reset()
   }
 
   return (
